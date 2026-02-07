@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Link Ready ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+
+<div class="card">
+    <h2>❤️ Your Valentine Link is Ready!</h2>
+
+    <p class="link" th:text="${shareLink}"></p>
+
+    <a class="btn"
+       th:href="'https://wa.me/?text=Open%20this%20surprise%20❤️%20' + ${shareLink}">
+        Share on WhatsApp 💚
+    </a>
+
+    <button class="btn" onclick="copyLink()">Copy Link 📋</button>
+</div>
+
+<script>
+    function copyLink() {
+        navigator.clipboard.writeText(document.querySelector('.link').innerText);
+        alert("Link copied ❤️");
+    }
+</script>
+
+</body>
+</html>

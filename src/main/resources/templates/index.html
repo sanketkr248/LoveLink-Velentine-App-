@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>LoveLink 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#ff4d6d">
+
+</head>
+<body>
+
+<div class="card">
+    <h2>💖 Create Your Valentine Surprise</h2>
+
+    <form method="post" action="/love/create-ui">
+        <input type="text" name="senderName" placeholder="Your Name" required>
+        <input type="text" name="receiverName" placeholder="Partner's Name" required>
+        <textarea name="message" placeholder="Write your love message ❤️" required></textarea>
+
+        <button type="submit">Generate Love Link 💌</button>
+    </form>
+</div>
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js")
+            .then(() => console.log("Service Worker Registered"));
+    }
+</script>
+
+
+</body>
+</html>

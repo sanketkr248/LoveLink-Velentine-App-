@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Valentine Surprise 💘</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+
+
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="card">
+    <h2>💌 A Message for <span th:text="${receiverName}"></span></h2>
+
+    <p class="message" th:text="${message}"></p>
+
+    <p class="from">— With ❤️ from <b th:text="${senderName}"></b></p>
+</div>
+
+<script>
+    document.body.addEventListener("click", function () {
+        const heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "0px";
+        heart.style.fontSize = "30px";
+        heart.style.animation = "floatUp 2s linear";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 2000);
+    });
+</script>
+
+</body>
+</html>
