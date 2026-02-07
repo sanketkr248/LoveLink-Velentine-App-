@@ -28,10 +28,11 @@ public class LoveMessageController {
 
         Map<String, String> response = new HashMap<>();
         response.put("linkCode", love.getLinkCode());
-        response.put("shareLink", "https://lovelinkbysanket/love/" + love.getLinkCode());
 
+        // ❌ REMOVE hardcoded shareLink
         return response;
     }
+
     @GetMapping("/{code}")
     public Map<String, String> getLoveMessage(@PathVariable("code") String code) {
 
