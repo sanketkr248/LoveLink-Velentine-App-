@@ -28,7 +28,7 @@ public class LoveMessageController {
 
         Map<String, String> response = new HashMap<>();
         response.put("linkCode", love.getLinkCode());
-        response.put("shareLink", "http://localhost:8080/love/" + love.getLinkCode());
+        response.put("shareLink", "https://lovelinkbysanket/love/" + love.getLinkCode());
 
         return response;
     }
