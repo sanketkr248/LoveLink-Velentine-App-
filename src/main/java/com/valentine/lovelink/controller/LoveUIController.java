@@ -29,7 +29,7 @@ public class LoveUIController {
                                Model model) {
 
         LoveMessage love = service.createLoveMessage(senderName, receiverName, message);
-        String shareLink = "http://lovelinkbysanket/love/view/" + love.getLinkCode();
+        String shareLink = "https://lovelinkbysanket/love/view/" + love.getLinkCode();
 
         model.addAttribute("shareLink", shareLink);
         return "success";
